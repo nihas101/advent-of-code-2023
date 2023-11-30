@@ -39,8 +39,6 @@
 
 ;; Math
 
-(defn abs ^long [^long x] (max x (- x)))
-
 (defn manhattan-distance ^long [[^long x1 ^long y1] [^long x2 ^long y2]]
   (+ (abs (- x1 x2)) (abs (- y1 y2))))
 
