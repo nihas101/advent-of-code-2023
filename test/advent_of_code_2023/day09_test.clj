@@ -9,7 +9,7 @@
 
 (deftest day09-1-example-test
   (testing "day09-1 example"
-    (is (= nil 
+    (is (= nil
            (day09-1 example-input)))))
 
 (deftest day09-1-test
