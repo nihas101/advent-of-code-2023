@@ -1,6 +1,6 @@
 (ns advent-of-code-2023.day01
   (:require
-   [advent-of-code-2023.utils :as u]
+   [advent-of-code-2023.utils.string :as u]
    [clojure.string :as string]))
 
 (defonce ^:private ascii-numbers

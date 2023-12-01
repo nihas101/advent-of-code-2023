@@ -1,6 +1,6 @@
 (ns advent-of-code-2023.day11
   (:require
-   [advent-of-code-2023.utils :as u]))
+   [advent-of-code-2023.utils.string :as u]))
 
 (defn parse-input [input])
 
