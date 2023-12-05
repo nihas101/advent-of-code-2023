@@ -1,7 +1,8 @@
 (ns advent-of-code-2023.day03-test
   (:require
    [clojure.test :refer :all]
-   [advent-of-code-2023.day03 :refer :all]))
+   [advent-of-code-2023.day03 :refer :all]
+   [advent-of-code-2023.test-utils :as tu]))
 
 (def ^:private example-input (parse-input "467..114..
 ...*......
@@ -14,7 +15,7 @@
 ...$.*....
 .664.598.."))
 
-(def ^:private input (parse-input (slurp "resources/day03.txt")))
+(def ^:private input (parse-input (tu/slurp-input "resources/day03.txt")))
 
 (deftest day03-1-example-test
   (testing "day03-1 example"

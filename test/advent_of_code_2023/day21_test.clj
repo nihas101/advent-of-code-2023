@@ -1,11 +1,12 @@
 (ns advent-of-code-2023.day21-test
   (:require
    [clojure.test :refer :all]
-   [advent-of-code-2023.day21 :refer :all]))
+   [advent-of-code-2023.day21 :refer :all]
+   [advent-of-code-2023.test-utils :as tu]))
 
 (defonce ^:private example-input (parse-input ""))
 
-(def ^:private input (parse-input (slurp "resources/day21.txt")))
+(def ^:private input (parse-input (tu/slurp-input "resources/day21.txt")))
 
 (deftest day21-1-example-test
   (testing "day21-1 example"

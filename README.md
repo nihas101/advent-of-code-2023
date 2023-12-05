@@ -5,7 +5,7 @@ A repository containing my solutions to the [Advent of code 2023](https://advent
 The solutions are written in [Clojure](https://clojure.org). [Leningen](https://leiningen.org/) can be used to execute the code within this project to e.g. run tests on the solutions.
 
 ## Solutions
-The solutions are located in `src/advent_of_code_2023/`. The solutions for day XY are found in file `dayXY.clj`. The corresponding tests are found in files named `test/advent_of_code_2023/dayXY_test.clj`. Input files are stored in `resources/dayXY.txt`
+The solutions are located in `src/advent_of_code_2023/`. The solutions for day XY are found in file `dayXY.clj`. The corresponding tests are found in files named `test/advent_of_code_2023/dayXY_test.clj`.
 
 
 # Using This Repository as a Base
@@ -25,6 +25,9 @@ If you plan to use this as a base project for your own solutions also consider t
 - [eastwood](https://github.com/jonase/eastwood) for linting
 - [lein-auto](https://github.com/weavejester/lein-auto) to automatically run tasks on file changes
 - [eftest](https://github.com/weavejester/eftest) for prettier test output
+
+# Notice
+Please remember to not include the puzzle input in your repository as noted in the [about page](https://adventofcode.com/about) of the advent of code.
 
 ## License
 
