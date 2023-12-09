@@ -17,5 +17,7 @@
   ([s del]
    (mapv #(string/split % del) (string/split s line-endings))))
 
-(defn read-longs [s split-on]
-  (mapv #(Long/parseLong %) (string/split (string/trim s) split-on)))
+(defn read-longs
+  ([s] (read-longs s #"\s+"))
+  ([s split-on]
+   (mapv #(Long/parseLong %) (string/split (string/trim s) split-on))))
