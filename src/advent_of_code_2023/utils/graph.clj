@@ -30,11 +30,9 @@
                        (path-fn path-val c))
         :else (path-fn path-val c)))))
 
-(defn bfs [start-state end-val neighbours visited-state path-fn]
+(defn bfs [start-state continue? neighbours visited-state path-fn]
   (pruning-bfs start-state neighbours visited-state
-               (constantly 0)
-               (fn [[n v]] (and n (not= v end-val)))
-               path-fn))
+               (constantly 0) continue? path-fn))
 
 ;;; Positional graphs
 
