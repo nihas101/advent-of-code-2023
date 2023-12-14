@@ -36,6 +36,14 @@
 
 ;;; Positional graphs
 
+(defn graph->str [{:keys [positions height width] :as g}]
+  (string/join \newline
+               (mapv string/join
+                     (partition-all width
+                                    (for [y (range height)
+                                          x (range width)]
+                                      (positions [x y]))))))
+
 (defn- vals->pos+val [values val-parser]
   (mapcat (fn [hs y] (mapv (fn [h x] [[x y] (val-parser h)])
                            hs (range)))
