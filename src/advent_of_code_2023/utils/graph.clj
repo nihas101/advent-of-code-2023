@@ -1,6 +1,7 @@
 (ns advent-of-code-2023.utils.graph
   (:require
    [clojure.string :as string]
+   [clojure.data.priority-map :as pm]
    [advent-of-code-2023.utils.string :as us]))
 
 (defn transitive-closure [initial-closure]
@@ -10,6 +11,29 @@
     (if (= new-closure initial-closure)
       initial-closure
       (recur new-closure))))
+
+(defn- assoc-to-visited
+  ([visited] visited)
+  ([visited [p dir]]
+   (update visited p (fnil conj #{}) dir)))
+
+(defn dijkstra [start-state continue? neighbours visited-state path-fn visited assoc-to-priority-map]
+  (loop [q (pm/priority-map start-state 0)
+         visited visited
+         path-val (path-fn)]
+    (let [[c] (first q)
+          q (if (seq q) (pop q) nil)]
+      (cond
+        (continue? c) (let [nz (neighbours c visited)]
+                        (recur (reduce assoc-to-priority-map q nz)
+                               (transduce
+                                (map visited-state)
+                                assoc-to-visited visited nz)
+                               (path-fn path-val c)))
+        (seq q) (recur q
+                       visited
+                       (path-fn path-val c))
+        :else (path-fn path-val c)))))
 
 (defn pruning-bfs [start-state neighbours visited-state branch-score continue? path-fn]
   (loop [q (conj clojure.lang.PersistentQueue/EMPTY start-state)
