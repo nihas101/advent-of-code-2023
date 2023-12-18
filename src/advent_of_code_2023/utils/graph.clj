@@ -66,7 +66,7 @@
                      (partition-all width
                                     (for [y (range height)
                                           x (range width)]
-                                      (positions [x y]))))))
+                                      (positions [x y] \.))))))
 
 (defn- vals->pos+val [values val-parser]
   (mapcat (fn [hs y] (mapv (fn [h x] [[x y] (val-parser h)])
