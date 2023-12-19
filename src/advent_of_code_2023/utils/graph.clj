@@ -22,7 +22,7 @@
          visited visited
          path-val (path-fn)]
     (let [[c] (first q)
-          q (if (seq q) (pop q) nil)]
+          q (when (seq q) (pop q))]
       (cond
         (continue? c) (let [nz (neighbours c visited)]
                         (recur (reduce assoc-to-priority-map q nz)
